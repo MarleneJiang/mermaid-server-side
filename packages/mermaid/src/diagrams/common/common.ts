@@ -43,17 +43,18 @@ const sanitizeMore = (text: string, config: MermaidConfig) => {
   return text;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const sanitizeText = (text: string, config: MermaidConfig): string => {
-  if (!text) {
-    return text;
-  }
-  if (config.dompurifyConfig) {
-    text = DOMPurify.sanitize(sanitizeMore(text, config), config.dompurifyConfig).toString();
-  } else {
-    text = DOMPurify.sanitize(sanitizeMore(text, config), {
-      FORBID_TAGS: ['style'],
-    }).toString();
-  }
+  // if (!text) {
+  //   return text;
+  // }
+  // if (config.dompurifyConfig) {
+  //   text = DOMPurify.sanitize(sanitizeMore(text, config), config.dompurifyConfig).toString();
+  // } else {
+  //   text = DOMPurify.sanitize(sanitizeMore(text, config), {
+  //     FORBID_TAGS: ['style'],
+  //   }).toString();
+  // }
   return text;
 };
 
